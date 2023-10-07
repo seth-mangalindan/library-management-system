@@ -13,6 +13,17 @@ return new class extends Migration {
         Schema::create('logbook', function (Blueprint $table) {
             $table->id();
             $table->integer('serial_id');
+
+            $table->foreignId('item_id')->constrained(
+                table: 'inventory',
+                indexName: 'item_id'
+            );
+
+            $table->foreignId('user_id')->constrained(
+                table: 'users',
+                indexName: 'user_id'
+            );
+
             $table->dateTime('borrow_date');
             $table->dateTime('return_date');
             $table->timestamps();
