@@ -15,14 +15,15 @@ return new class extends Migration {
             $table->string('title');
             $table->string('authors');
             $table->integer('average_rating');
-            $table->integer('isbn');
-            $table->integer('isbn13');
+            $table->bigInteger('isbn');
+            $table->bigInteger('isbn13');
             $table->string('language_code');
             $table->integer('num_pages');
             $table->integer('ratings_count');
             $table->integer('text_reviews_count');
             $table->dateTime('publication_date');
             $table->string('publisher');
+            $table->timestamps();
         });
     }
 

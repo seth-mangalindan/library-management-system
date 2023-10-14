@@ -12,7 +12,7 @@ return new class extends Migration {
     {
         Schema::create('inventory', function (Blueprint $table) {
             $table->id()->unique();
-            $table->string('item_id');
+            $table->string('item_id')->unique();
             $table->timestamps();
         });
     }
